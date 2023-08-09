@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>演習番外編</title>
+<script>
+function execSample() {
+	//sinceに入力されている時刻の文字列を取得する
+	const sinceString = document.getElementById('since').value;
+	console.log(sinceString);
+	//UnixTimeに変換する
+	const sinceUnixTime = Date.parse(sinceString) / 1000;
+	console.log(sinceUnixTime);
+	//untilに入力されている時刻の文字列を取得する
+	const untilString = document.getElementById('until').value;
+	console.log(untilString);
+	//UnixTimeに変換する
+	const untilUnixTime = Date.parse(untilString) / 1000;
+	console.log(untilUnixTime);
+}
+</script>
+</head>
+<body>
+<h1>F12キーでログ確認</h1>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/input/datetime-local">datetime-local</a>を使って日時を入力/取得してみる練習</p>
+<dl>
+<dt><label for="since">Since:</label></dt>
+<dd><input type="datetime-local" id="since" name="since" min="2023-01-01T00:00" max="2023-12-31T23:59"></dd>
+<dt><label for="until">Until:</label></dt>
+<dd><input type="datetime-local" id="until" name="until" min="2023-01-01T00:00" max="2023-12-31T23:59"></dd>
+<dt><label for="exec">取得してみる</label></dt>
+<dd><input type="button" id="exec" onclick="execSample()" value="取得"></dd>
+</dl>
+</body>
+</html>
